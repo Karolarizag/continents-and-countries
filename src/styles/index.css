@@ -1,0 +1,14 @@
+#components-layout-demo-top .logo {
+  float: left;
+  width: 120px;
+  margin: 16px 24px 16px 0;
+  background: #ccc;
+}
+.ant-row-rtl #components-layout-demo-top .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+.layout {
+  height: 100%;
+}

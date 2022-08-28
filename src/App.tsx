@@ -1,29 +1,27 @@
 import './App.css';
-import 'antd/dist/antd.css';
-import { Layout } from 'antd';
-const {Content} = Layout
+import { Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Index from './pages/Index';
+import GeographicalData from './pages/GeographicalData';
+import FAQs from './pages/Faqs';
 
-function App() {
+const App = () => {
 
   return (
     <div className="App">
 
-        <Layout>
-            <Content
-              className="site-layout-background"
-              style={{
-                padding: 24,
-                margin: 0,
-                minHeight: 280,
-              }}
-            >
-              <p>hello</p>
-            </Content>
-          </Layout>
-
+      <Routes>
+        {
+          localStorage.logged 
+          ? <Route index element={<Index />} />
+          : <Route index element={<Login />} />
+        }
+        <Route path='/geographical-data' element={<GeographicalData/>} />
+        <Route path='/faqs' element={<FAQs/>} />
+      </Routes>
 
     </div>
   );
-}
+};
 
 export default App;
