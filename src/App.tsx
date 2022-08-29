@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Login from './pages/Login';
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import FAQs from './pages/Faqs';
 
 const App = () => {
