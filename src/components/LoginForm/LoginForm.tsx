@@ -23,7 +23,7 @@ const LoginForm = () => {
   };
 
   return (
-    <>
+    <div id="container">
       <Card title="Log in" className='Card' bordered={false}>
         <Form
           name="basic"
@@ -64,10 +64,10 @@ const LoginForm = () => {
             Try again
           </Button>
         }
-      >
+        >
         <h4>Username and/or password are incorrect. Please, try again.</h4>
       </Modal>
-    </>
+    </div>
   );
 };
 

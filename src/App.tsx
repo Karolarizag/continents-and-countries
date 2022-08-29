@@ -1,8 +1,9 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Layout } from 'antd';
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
 import Login from './pages/Login';
-import Index from './pages/Index';
-import GeographicalData from './pages/GeographicalData';
+import Home from './pages/Home'
 import FAQs from './pages/Faqs';
 
 const App = () => {
@@ -10,16 +11,22 @@ const App = () => {
   return (
     <div className="App">
 
-      <Routes>
         {
           localStorage.logged 
-          ? <Route index element={<Index />} />
-          : <Route index element={<Login />} />
+          ? (
+            <>
+              <Layout className="layout">
+                <Navbar />
+              </Layout>
+            </>
+            )
+          : <Login />
         }
-        <Route path='/geographical-data' element={<GeographicalData/>} />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route index element={<Login />} />
         <Route path='/faqs' element={<FAQs/>} />
       </Routes>
-
     </div>
   );
 };

@@ -1,6 +1,6 @@
 const FAQs = () => {
   return (
-    <div>faqs</div>
+    <div>fasdsqs</div>
   )
 }
 

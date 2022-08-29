@@ -1,0 +1,15 @@
+.btn {
+  margin: 5px;
+  background-color: transparent !important;
+  border: none !important;
+  color: white !important;
+}
+
+.btn:hover {
+  background-color: white !important;
+  color: #181818 !important;
+}
+
+.divider {
+  width: 90% ;
+}
