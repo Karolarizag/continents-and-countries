@@ -36,7 +36,7 @@ const CountryPage = () => {
         <Button icon={<RollbackOutlined />}>Go back!</Button>
       </Link>
       <Card className="card" title={`${country?.name}`}>
-        <table>
+        <table className="table">
 
           <tr>
             <td>
@@ -51,7 +51,7 @@ const CountryPage = () => {
             </td>
           </tr>
           
-          <tr className="row">
+          <tr>
             <td>
               <p>
                 Code
@@ -64,7 +64,7 @@ const CountryPage = () => {
             </td>
           </tr>
           
-          <tr className="row">
+          <tr>
             <td>
               <p>
                 Native
@@ -77,7 +77,7 @@ const CountryPage = () => {
             </td>
           </tr>
 
-          <tr className="row">
+          <tr>
             <td>
               <p>
                 Phone
@@ -90,7 +90,7 @@ const CountryPage = () => {
             </td>
           </tr>
 
-          <tr className="row">
+          <tr>
             <td>
               <p>
                 Currency
@@ -103,7 +103,7 @@ const CountryPage = () => {
             </td>
           </tr>
 
-          <tr className="row">
+          <tr>
             <td>
               <p>
                 Continent
@@ -120,7 +120,7 @@ const CountryPage = () => {
             </p>
           </tr>
 
-          <tr className="row">
+          <tr>
             <td>
               <p>
                 Languages
@@ -128,7 +128,7 @@ const CountryPage = () => {
             </td>
             {
               country?.languages?.map((lang:Language) => {
-                return <p>{lang.name}<br/>{lang.code}</p>
+                return <p>{lang.name}<br/>{lang.code.toUpperCase()}</p>
               })
             }
           </tr>

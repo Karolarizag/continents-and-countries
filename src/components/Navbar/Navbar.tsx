@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { LogoutOutlined } from '@ant-design/icons';
 import { Layout, Menu, Button } from 'antd';
 import './Navbar.css'
@@ -6,6 +6,12 @@ import './Navbar.css'
 const { Header } = Layout
 
 const Navbar = () => {
+
+  const navigate = useNavigate()
+  const logout = () => {
+    localStorage.removeItem('logged')
+    navigate(0)
+  }
 
   return (
     <Header>
@@ -19,9 +25,7 @@ const Navbar = () => {
             <Button className='btn'>FAQs</Button>
           </Link>
           <div className='divider' />
-          <Link to="/faqs">
-            <Button className='btn' ghost={true} icon={<LogoutOutlined />} />
-          </Link>
+          <Button onClick={logout} className='btn logout' ghost={true} icon={<LogoutOutlined />} />
         </Menu>
     </Header>
   )
