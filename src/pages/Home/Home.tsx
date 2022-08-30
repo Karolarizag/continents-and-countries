@@ -1,36 +1,13 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { Select } from "antd";
 import { useState } from "react";
 import { Continent, DataType } from "../../types";
 import { Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
+import { LIST_CONTINENTS, LIST_COUNTRIES } from "../../services/api";
 import './Home.css'
 
 const { Option } = Select;
-
-const LIST_CONTINENTS = gql`
-  {
-    continents {
-      code
-      name
-      countries {
-        name
-        code
-        capital
-      }
-    }
-  }
-`;
-
-const LIST_COUNTRIES = gql`
-  {
-    countries {
-      code
-      name
-      capital
-    }
-  }
-`;
 
 type TablePaginationPosition =
   | 'topLeft'
@@ -45,13 +22,12 @@ const columns: ColumnsType<DataType> = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: (text: string) => <a href={`/${text.split(' ').join('')}`}>{text}</a>,
   },
   {
     title: 'Code',
     dataIndex: 'code',
     key: 'code',
-    responsive: [ 'sm']
+    render: (code: string) => <a href={`/${code.split(' ').join('')}`}>{code}</a>
   },
   {
     title: 'Capital',
@@ -99,7 +75,7 @@ const Home = () => {
         }
 
       </Select>
-      <Table columns={columns} pagination={{ position: [bottom] }} dataSource={data?.countries} />;
+      <Table columns={columns} pagination={{ position: [bottom] }} dataSource={data?.countries} />
 
     </div>
   )

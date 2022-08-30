@@ -9,15 +9,15 @@ export type Country = {
   capital: string, 
   native: string, 
   phone: string, 
-  continent: string, 
+  continent: Continet, 
   currency: string, 
-  language: Language[]
+  languages: Language[]
 }
 
 export type Continent = {
   name: string, 
   code: string, 
-  countries: Country[]
+  countries?: Country[]
 }
 
 export type Language = {

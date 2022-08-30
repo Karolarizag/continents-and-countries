@@ -1,10 +1,10 @@
-import './App.css';
 import { Layout } from 'antd';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
 import Home from './pages/Home/Home'
-import FAQs from './pages/Faqs';
+import FAQs from './pages/Faqs/Faqs';
+import CountryPage from './pages/Country/Country';
 
 const App = () => {
 
@@ -25,6 +25,7 @@ const App = () => {
       <Routes>
         <Route index element={<Home />} />
         <Route index element={<Login />} />
+        <Route path='/:code' element={<CountryPage />} />
         <Route path='/faqs' element={<FAQs/>} />
       </Routes>
     </div>

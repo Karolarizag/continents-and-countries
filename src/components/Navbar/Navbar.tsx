@@ -12,7 +12,7 @@ const Navbar = () => {
       <Menu
         theme="dark"
         mode="horizontal">
-          <Link to="/geographical-data">
+          <Link to="/">
             <Button className='btn'>Geographical data</Button>
           </Link>
           <Link to="/faqs">
