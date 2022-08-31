@@ -1,20 +1,16 @@
-import { Button, Modal } from 'antd';
-import React, { useState } from 'react';
+import {  Modal } from 'antd'
+import React, { useState } from 'react'
 
 const ModalComponent = ({text}: any) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
+  const [isModalVisible, setIsModalVisible] = useState(false)
 
   const handleOk = () => {
-    setIsModalVisible(false);
-  };
+    setIsModalVisible(false)
+  }
 
   const handleCancel = () => {
-    setIsModalVisible(false);
-  };
+    setIsModalVisible(false)
+  }
 
   return (
     <>
@@ -22,7 +18,7 @@ const ModalComponent = ({text}: any) => {
         { text }
       </Modal>
     </>
-  );
-};
+  )
+}
 
-export default ModalComponent;
+export default ModalComponent

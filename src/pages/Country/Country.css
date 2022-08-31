@@ -1,4 +1,4 @@
-.container {
+.page {
   width: 80%;
   margin: 50px auto;
   padding-bottom: 40px;
@@ -30,6 +30,5 @@ tr {
 }
 
 p {
-  margin: 20px 20px;
-  font-size: 2vh;
+  margin: 10px 0;
 }

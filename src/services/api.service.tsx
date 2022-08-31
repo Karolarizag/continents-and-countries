@@ -1,5 +1,5 @@
-import { gql } from "@apollo/client";
-import { User } from "../types";
+import { gql } from "@apollo/client"
+import { User } from "../types"
 
 export const LIST_CONTINENTS = gql`
   {
@@ -13,7 +13,7 @@ export const LIST_CONTINENTS = gql`
       }
     }
   }
-`;
+`
 
 export const LIST_COUNTRIES = gql`
   {
@@ -23,7 +23,7 @@ export const LIST_COUNTRIES = gql`
       capital
     }
   }
-`;
+`
 
 export const API_USER:User = {
   username: 'admin', 

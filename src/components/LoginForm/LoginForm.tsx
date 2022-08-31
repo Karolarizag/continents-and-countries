@@ -1,24 +1,24 @@
-import React, {useState} from 'react';
-import { Card, Button, Form, Input, Modal } from 'antd';
-import { User } from '../../types';
+import React, {useState} from 'react'
+import { Card, Button, Form, Input, Modal } from 'antd'
+import { User } from '../../types'
 import { useNavigate } from 'react-router-dom'
-import { API_USER } from '../../services/api.service';
+import { API_USER } from '../../services/api.service'
 import './LoginForm.css'
 
 const LoginForm = () => {
 
   const login = (obj:User) => {
-    // post a la api y response 
+    // req a la api y response 
     if (obj.username === API_USER.username && obj.password === API_USER.password) {
       localStorage.setItem("user", JSON.stringify(API_USER.accesToken))
-      return 'authorized'
+      return 'authorized' // promise response
     } else {
       return 'login unsuccesfull'
     }
   }
 
   const navigate = useNavigate()
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false)
   
   const onFinish = (values: User) => {
     const response = login(values)
@@ -27,14 +27,14 @@ const LoginForm = () => {
     } else if (response === 'login unsuccesfull') {
       setIsModalVisible(true)
     }
-  };
+  }
 
   const handleCancel = () => {
-    setIsModalVisible(false);
-  };
+    setIsModalVisible(false)
+  }
 
   return (
-    <div id="container">
+    <div id="loginContainer">
       <Card title="Log in" className='Card' bordered={false}>
         <Form
           name="basic"
@@ -79,7 +79,7 @@ const LoginForm = () => {
         <h4>Username and/or password are incorrect. Please, try again.</h4>
       </Modal>
     </div>
-  );
-};
+  )
+}
 
-export default LoginForm
+export default LoginForm;

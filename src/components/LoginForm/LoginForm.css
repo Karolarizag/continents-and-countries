@@ -1,4 +1,4 @@
-#container {
+#loginContainer {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -7,4 +7,11 @@
 
 .Card {
   max-width: 500px;
+  padding: 20px 40px 0;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+Form {
+  margin-top: 30px !important;
 }

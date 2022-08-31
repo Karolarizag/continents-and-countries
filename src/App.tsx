@@ -1,9 +1,9 @@
-import { Route, Routes } from 'react-router-dom';
-import Login from './pages/Login/Login';
+import { Route, Routes } from 'react-router-dom'
+import Login from './pages/Login/Login'
 import Home from './pages/Home/Home'
-import FAQs from './pages/Faqs/Faqs';
-import CountryPage from './pages/Country/Country';
-import Layout from './components/Layout/Layout';
+import FAQs from './pages/Faqs/Faqs'
+import CountryPage from './pages/Country/Country'
+import Layout from './components/Layout/Layout'
 
 const App = () => {
 
@@ -26,7 +26,7 @@ const App = () => {
         <Route path='/faqs' element={<FAQs/>} />
       </Routes>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

@@ -1,13 +1,13 @@
-import { useQuery } from "@apollo/client";
-import { Select } from "antd";
-import { useState } from "react";
-import { Continent, DataType } from "../../types";
-import { Table } from 'antd';
-import { LIST_CONTINENTS, LIST_COUNTRIES } from "../../services/api.service";
-import type { ColumnsType } from 'antd/es/table';
+import { useQuery } from "@apollo/client"
+import { Select } from "antd"
+import { useState } from "react"
+import { Continent, DataType } from "../../types"
+import { Table } from 'antd'
+import { LIST_CONTINENTS, LIST_COUNTRIES } from "../../services/api.service"
+import type { ColumnsType } from 'antd/es/table'
 import './Home.css'
 
-const { Option } = Select;
+const { Option } = Select
 
 type TablePaginationPosition =
   | 'topLeft'
@@ -15,7 +15,7 @@ type TablePaginationPosition =
   | 'topRight'
   | 'bottomLeft'
   | 'bottomCenter'
-  | 'bottomRight';
+  | 'bottomRight'
 
 const columns: ColumnsType<DataType> = [
   {
@@ -35,13 +35,13 @@ const columns: ColumnsType<DataType> = [
     key: 'capital',
     responsive: ['sm']
   }
-];
+]
 
 
 const Home = () => {
   const continents = useQuery(LIST_CONTINENTS).data?.continents
   const countries = useQuery(LIST_COUNTRIES).data?.countries
-  const [bottom] = useState<TablePaginationPosition>('bottomCenter');
+  const [bottom] = useState<TablePaginationPosition>('bottomCenter')
   const [keyword, setKeyword] = useState('all')
 
   const loggedIn = localStorage.user ? true : false
@@ -54,7 +54,7 @@ const Home = () => {
 
   const handleChange = (value: string) => {
     setKeyword(value)
-  };
+  }
 
   const data = continents?.find((continent:Continent) => {
     if(continent.code === keyword) {
@@ -62,14 +62,17 @@ const Home = () => {
     } else if (keyword === defaultOption.code) {
       return countries
     }
+    return null
   })
 
   return (
-    <div className="container">
+    <>
 
       {
         loggedIn
-          ?  <>
+          ?  
+          <div className="page">
+
             <Select defaultValue="all" className="select" onChange={handleChange}>
             <Option value={defaultOption.code} key={defaultOption.code} label={defaultOption.name}>{defaultOption.name}</Option>
             
@@ -81,13 +84,13 @@ const Home = () => {
             
             </Select>
             <Table columns={columns} pagination={{ position: [bottom] }} dataSource={data?.countries} />
-          </>
+          </div>
           : null
       }
 
-    </div>
+    </>
   )
 
-};
+}
 
-export default Home;
+export default Home

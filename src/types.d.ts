@@ -26,6 +26,11 @@ export type Language = {
   code: string
 }
 
+export type FAQ = {
+  header: string,
+  text: string
+}
+
 interface DataType {
   key: string;
   name: string;

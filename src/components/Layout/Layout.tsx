@@ -1,5 +1,5 @@
-import { Layout } from 'antd';
-import Navbar from '../Navbar/Navbar';
+import { Layout } from 'antd'
+import Navbar from '../Navbar/Navbar'
 
 const LayoutComponent = () => {
   return (
@@ -9,4 +9,4 @@ const LayoutComponent = () => {
   )
 }
 
-export default LayoutComponent;
+export default LayoutComponent
