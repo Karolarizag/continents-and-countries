@@ -1,6 +1,7 @@
 export type User = {
   username: string
   password: string
+  accesToken: string
 }
 
 export type Country = {

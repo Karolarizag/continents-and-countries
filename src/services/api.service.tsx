@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+import { User } from "../types";
 
 export const LIST_CONTINENTS = gql`
   {
@@ -23,3 +24,9 @@ export const LIST_COUNTRIES = gql`
     }
   }
 `;
+
+export const API_USER:User = {
+  username: 'admin', 
+  password: 'admin',
+  accesToken: 'thisisatokenreceivedfromapi'
+}

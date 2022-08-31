@@ -1,6 +1,7 @@
 .container {
   width: 80%;
   margin: 50px auto;
+  padding-bottom: 40px;
 }
 
 Button {
