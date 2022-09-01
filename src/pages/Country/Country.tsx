@@ -92,7 +92,7 @@ const CountryPage = () => {
                   </td>
                   <td>
                     <p>
-                      {country?.phone}
+                      +{country?.phone}
                     </p> 
                   </td>
                 </tr>

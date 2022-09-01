@@ -9,7 +9,7 @@ const faqs = [
   {
     header: "Main page",
     text: [
-      "After logging in you will enter the main page where you will find a table with all the countries in our database with the data: name, code (abbreviation of name) and capital.",
+      "After logging in you will enter the main page where you can find a table with all the countries in our database with the data: name, code (abbreviation of name) and capital.",
       "If you are looking for countries in specific areas, you can filter the information by the respective continents. You will find this option in the selector above the table."
     ]
   },
@@ -52,7 +52,7 @@ const FAQs = () => {
 
             <h3>What is Continents & Countries?</h3> 
             <p>
-              In Continents and Countries you will have access to the geographical information of the world, with a simple and intuitive interface.
+              Continents and Countries you will have access to the geographical information of the world, in a simple and intuitive way.
             </p>
 
             <h3>How to use this app?</h3>
